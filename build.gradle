@@ -1,0 +1,92 @@
+apply plugin: 'com.android.library'
+
+tasks.withType(Javadoc).all { enabled = false }
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+ext {
+    bintrayRepo = 'funads'
+    bintrayName = 'funads'
+
+    publishedGroupId = 'funs.adds.android.sdk.component'
+    libraryName = 'funads'
+    artifact = 'funads'
+
+    libraryDescription = 'A Ads library as Google Ads'
+
+    siteUrl = 'https://github.com/dodangduong/fundads.git'
+    gitUrl = 'https://github.com/dodangduong/fundads.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'techlab'
+    developerName = 'tran'
+    developerEmail = 'khaitq1992.ptit@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    //noinspection GradleCompatible
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.9.6'
+    implementation 'com.google.android.exoplayer:exoplayer-dash:2.9.6'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.9.6'
+    implementation 'com.squareup.retrofit2:retrofit:2.8.2'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+//    //rxjava and rxandroid
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'io.reactivex:rxjava:1.1.6'
+//    //rxjava adapter
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+//
+//    //glide
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+//
+    implementation 'io.alterac.blurkit:blurkit:1.1.0'
+    implementation 'jp.wasabeef:blurry:3.0.0'
+
+    implementation 'com.google.android.exoplayer:exoplayer:2.9.1'
+
+//    implementation 'org.greenrobot:eventbus:3.2.0'
+
+}
+// Place it at the end of the file
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'

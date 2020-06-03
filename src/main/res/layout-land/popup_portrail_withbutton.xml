@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="580dp"
+    android:padding="6dp"
+    android:background="@drawable/popupimagesmallbackground"
+    android:layout_height="305dp">
+    <ImageView
+        android:id="@+id/image_main_content"
+        app:srcCompat="@drawable/popupmainimage"
+        android:layout_width="580dp"
+        android:scaleType="centerCrop"
+        android:layout_height="305dp"/>
+
+    <RelativeLayout
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="244dp"
+        android:background="@drawable/background_banner_view"
+        android:layout_width="378dp"
+        android:layout_height="47dp">
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/image_small_content"
+            android:layout_marginLeft="8dp"
+            app:srcCompat="@drawable/popupsmallimage"
+            android:layout_width="34dp"
+            android:layout_height="34dp"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_toRightOf="@+id/image_small_content"
+            android:layout_width="match_parent"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/sfprodisplaybold"
+            android:textSize="15sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="8dp"
+            android:text="Âm dương kiếm - Funtap"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/btn_download"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_toRightOf="@+id/image_small_content"
+            android:layout_below="@+id/tv_title"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:fontFamily="@font/sfprodisplaysemibold"
+            android:textSize="11sp"
+            android:layout_marginLeft="8dp"
+            android:textColor="#E5E5EA"
+            android:text="Siêu phẩm nhập vai hay nhất 2019"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/btn_download"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:background="@drawable/buttondownload"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="8dp"
+            android:id="@+id/btn_download"
+            android:layout_centerVertical="true"
+            android:layout_width="106dp"
+            android:layout_height="30dp"/>
+    </RelativeLayout>
+    <Button
+        android:layout_alignParentRight="true"
+        android:background="@drawable/btnclosepopup"
+        android:id="@+id/btn_close_popup"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        />
+</RelativeLayout>

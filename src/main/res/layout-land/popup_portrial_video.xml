@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="610dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:blurkit="http://schemas.android.com/tools"
+    android:background="@drawable/popupimagesmallbackground"
+    android:padding="5dp"
+    android:layout_height="305dp"
+    android:id="@+id/framePoup">
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        app:shutter_background_color="@android:color/transparent"
+        android:layout_height="match_parent">
+    </com.google.android.exoplayer2.ui.PlayerView>
+    <funs.adds.android.sdk.component.view.FunAdsBannerView
+        android:id="@+id/funads_banner_view"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="15dp"
+        android:layout_width="378dp"
+        android:layout_height="wrap_content">
+    </funs.adds.android.sdk.component.view.FunAdsBannerView>
+    <RelativeLayout
+        android:background="@drawable/btnclosepopup"
+        android:layout_gravity="end"
+        android:id="@+id/btn_close_popupvideo"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_alignParentEnd="true">
+    </RelativeLayout>
+</FrameLayout>
